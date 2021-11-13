@@ -53,5 +53,34 @@ const root = new Vue({
         selectCard(indexPosition){
             this.slideCard = indexPosition;
         }
+        
+    },
+    created(){
+        setInterval(() => {
+            this.slideCard++;
+
+            if(this.slideCard > this.slides.length -1){
+                this.slideCard = 0;
+            }
+
+            document.querySelector('.thumb.active').classList.remove('active')
+        }, 3000);
     }
 })
+
+// const imageCard = document.querySelector('.thumb')
+// console.log(imageCard);
+
+// let activeIndex = 0;
+
+// imageCard[activeIndex].classList.add('active');
+
+// setInterval(() => {
+//     activeIndex++;
+
+    
+
+//     document.querySelector('.thumb.active').classList.remove('active')
+
+//     imageCard[activeIndex].classList.add('active');
+// }, 3000);
